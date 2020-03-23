@@ -15,7 +15,7 @@
 <target name="create" description="creating directory structure">
 	<echo message="Creating directory structure"/>
 	<mkdir dir="${classes_dir}"/>
-	<mkdir dir="${dest_dir}"/>
+	<mkdir dir="${package_dir}"/>
 </target>
 
 <target name="compile" description="compiling">
