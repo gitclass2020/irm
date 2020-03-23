@@ -1,0 +1,32 @@
+<project name="IRM" basedir="." default="">
+
+<!-- Setting Global Variables -->
+<property name="src_dir" value="src/main/java"/>
+<property name="test_dir" value="test/main/java"/>
+<property name="classes_dir" value="target/classes"/>
+<property name="package_dir" value="target/build">
+
+
+<target name="clean" description="cleaning target folder">
+	<echo message="Removing directory structure"/>
+	<delete dir="target"/>
+</target>
+
+<target name="create" description="creating directory structure">
+	<echo message="Creating directory structure"/>
+	<mkdir dir="${classes_dir}"/>
+	<mkdir dir="${dest_dir}"/>
+</target>
+
+<target name="compile" description="compiling">
+	<echo message="Compiling source code"/>
+	<javac srcdir="${src_dir}" destdir="${classes_dir}">
+	</javac>
+</target>
+
+<target name="package" description="creating package">
+	<echo message="Packaging binaries"/>
+	<zip destfile="${package_dir}/${ant.project.name}.zip" basedir="${classes_dir}"/>
+</target>
+
+</project>
