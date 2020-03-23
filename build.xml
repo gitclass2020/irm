@@ -1,4 +1,4 @@
-<project name="IRM" basedir="." default="">
+<project name="IRM" basedir="." default="main">
 
 <!-- Setting Global Variables -->
 <property name="src_dir" value="src/main/java"/>
@@ -27,6 +27,10 @@
 <target name="package" description="creating package">
 	<echo message="Packaging binaries"/>
 	<zip destfile="${package_dir}/${ant.project.name}.zip" basedir="${classes_dir}"/>
+</target>
+
+<target name="main" description="calling all targets" depends="clean, create, compile, package">
+	<echo message="Calling all targets"/>
 </target>
 
 </project>
