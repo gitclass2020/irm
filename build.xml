@@ -4,7 +4,7 @@
 <property name="src_dir" value="src/main/java"/>
 <property name="test_dir" value="test/main/java"/>
 <property name="classes_dir" value="target/classes"/>
-<property name="package_dir" value="target/build">
+<property name="package_dir" value="target/build"/>
 
 
 <target name="clean" description="cleaning target folder">
