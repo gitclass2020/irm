@@ -7,6 +7,10 @@
 <property name="classes_dir" value="target/classes"/>
 <property name="package_dir" value="target/build"/>
 
+<filelist id="txtfiles" dir="${aoneSol_dir}"> 
+	<file name="one.txt"/>
+	<file name="three.txt"/>
+</filelist>
 
 <target name="clean" description="cleaning target folder">
 	<echo message="Removing directory structure"/>
@@ -25,6 +29,10 @@
 		<fileset dir="${aoneSol_dir}" casesensitive="yes">
 			<include name="**/*.java"/>
 		</fileset>
+	</copy>
+	
+	<copy todir="${package_dir}">
+		<filelist refid="txtfiles"/>
 	</copy>
 </target>
 
