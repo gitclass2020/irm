@@ -17,6 +17,10 @@
   <exclude name="**/*WORLD*"/>
 </patternset>
 
+<path id="classpath">
+    <pathelement location="${ant.home}/lib/junit-4.10.jar"/>
+</path>
+
 <target name="clean" description="cleaning target folder">
 	<echo message="Removing directory structure"/>
 	<delete dir="target"/>
@@ -59,7 +63,17 @@
 	<zip destfile="${package_dir}/${ant.project.name}.zip" basedir="${classes_dir}"/>
 </target>
 
-<target name="main" description="calling all targets" depends="clean, create, copy, compile, package">
+<target name="junitTest" description="java test cases checking">
+	<echo message="Checking java test cases"/>
+	<junit>
+		<classpath refid="classpath"/>
+		<formatter type="brief" usefile="false"/>
+        <test name="com.aonesolutions.MessageGenerator" haltonfailure="no" todir="${reports_dir}"/>	 
+		<test name="test.main.java.TestJunit" haltonfailure="no" todir="${reports_dir}"/>
+	</junit>
+</target>
+
+<target name="main" description="calling all targets" depends="clean, create, copy, compile, package, junitTest">
 	<echo message="Calling all targets"/>
 </target>
 
