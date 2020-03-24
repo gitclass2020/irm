@@ -39,6 +39,13 @@
 	<copy todir="${package_dir}">
 		<filelist refid="txtfiles"/>
 	</copy>
+	
+	<copy file="${aoneSol_dir}/build.properties" todir="${package_dir}">
+		<filterset>
+			<filter token="BUILDNUMBER" value="200"/>
+		</filterset>
+	</copy>
+	
 </target>
 
 <target name="compile" description="compiling">
