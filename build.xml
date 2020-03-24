@@ -30,7 +30,7 @@
 
 <target name="compile" description="compiling">
 	<echo message="Compiling source code"/>
-	<javac srcdir="${src_dir}" destdir="${classes_dir}" includeruntime="false">
+	<javac srcdir="${src_dir}" destdir="${classes_dir}" includeantruntime="false">
 	</javac>
 </target>
 
