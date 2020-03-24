@@ -2,6 +2,7 @@
 
 <!-- Setting Global Variables -->
 <property name="src_dir" value="src/main/java"/>
+<property name="aoneSol_dir" value="src/com/aonesolutions"/>
 <property name="test_dir" value="test/main/java"/>
 <property name="classes_dir" value="target/classes"/>
 <property name="package_dir" value="target/build"/>
@@ -16,6 +17,15 @@
 	<echo message="Creating directory structure"/>
 	<mkdir dir="${classes_dir}"/>
 	<mkdir dir="${package_dir}"/>
+</target>
+
+<target name="copy" description="copying java files">
+
+	<copy todir="${src_dir}">
+		<fileset dir="${aoneSol_dir}" casesensitive="yes">
+			<include name="**/*.java"/>
+		</fileset>
+	</copy>
 </target>
 
 <target name="compile" description="compiling">
