@@ -39,7 +39,7 @@
 	<zip destfile="${package_dir}/${ant.project.name}.zip" basedir="${classes_dir}"/>
 </target>
 
-<target name="main" description="calling all targets" depends="clean, create, compile, package">
+<target name="main" description="calling all targets" depends="clean, create, copy, compile, package">
 	<echo message="Calling all targets"/>
 </target>
 
