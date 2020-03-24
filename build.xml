@@ -12,6 +12,11 @@
 	<file name="three.txt"/>
 </filelist>
 
+<patternset id="capitalfiles">
+  <include name="**/*.java"/>
+  <exclude name="**/*WORLD*"/>
+</patternset>
+
 <target name="clean" description="cleaning target folder">
 	<echo message="Removing directory structure"/>
 	<delete dir="target"/>
@@ -27,7 +32,7 @@
 
 	<copy todir="${src_dir}">
 		<fileset dir="${aoneSol_dir}" casesensitive="yes">
-			<include name="**/*.java"/>
+			<patternset refid="capitalfiles"/>
 		</fileset>
 	</copy>
 	
